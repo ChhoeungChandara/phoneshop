@@ -25,6 +25,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<dependency>
+    <groupId>org.liquibase</groupId>
+    <artifactId>liquibase-core</artifactId>
+</dependency>
 
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -87,6 +91,14 @@
         </annotationProcessorPaths>
     </configuration>
 </plugin>
+       <plugin>
+        <groupId>org.liquibase</groupId>
+        <artifactId>liquibase-maven-plugin</artifactId>
+        <configuration>
+            <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+        </configuration>
+    </plugin>
 		</plugins>
+		
 	</build>
 </project>

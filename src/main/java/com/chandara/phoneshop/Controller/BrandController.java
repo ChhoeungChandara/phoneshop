@@ -1,10 +1,7 @@
 package com.chandara.phoneshop.Controller;
-
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -54,8 +51,8 @@ public class BrandController {
 		Brand brandUpdate = brandService.update(id, brand);
 		return ResponseEntity.ok(BrandMapper.INSTANCE.toBrandDTO(brandUpdate));
 	}
-	/*
-	@GetMapping
+	
+	@GetMapping("getAll")
 	public ResponseEntity<?> getBrands(){
 		List<BrandDTO> list = brandService.getBrands()
 		.stream()
@@ -63,7 +60,7 @@ public class BrandController {
 		.collect(Collectors.toList());
 		return ResponseEntity.ok(list);
 	}
-	*/
+	
 	@GetMapping("filter")
 	public ResponseEntity<?> getBrands (@RequestParam("name")String name){
 		List<BrandDTO> list = brandService.getBrands(name)
