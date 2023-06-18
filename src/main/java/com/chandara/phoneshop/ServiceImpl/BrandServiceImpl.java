@@ -21,13 +21,13 @@ public class BrandServiceImpl implements BrandService {
 		return brandRepository.save(brand);
 	}
 	@Override
-	public Brand getById(Integer id) {
+	public Brand getById(Long id) {
 		return brandRepository.findById(id)
 			  // .orElseThrow(()-> new HttpClientErrorException(HttpStatus.NOT_FOUND,String.format("brand with id = %d not found",id)));
 				.orElseThrow(()-> new ResourceNotFoundException("Brand",id));
 	}
 	@Override
-	public Brand update(Integer id, Brand brandUpdate) {
+	public Brand update(Long id, Brand brandUpdate) {
 		Brand brand = getById(id);
 		brand.setName(brandUpdate.getName()); 
 		return brandRepository.save(brand);
@@ -92,10 +92,10 @@ public class BrandServiceImpl implements BrandService {
 	
 	}
 	@Override
-	public void delete(Integer id) {
+	public void delete(Long id){
 		 Brand bandid = brandRepository.findById(id)
 					                   .orElseThrow(()-> new ResourceNotFoundException("Brand",id));
 		 brandRepository.delete(bandid);
-	} 
+	}
 	
 }
