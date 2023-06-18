@@ -10,7 +10,8 @@ import lombok.Data;
 public class PageDTO {
 	List<?> list;
 	private PaginationDTO paginationDTO;
-	public PageDTO(Page<?> page) {
+	@SuppressWarnings("static-access")
+	public  PageDTO(Page<?> page) {
 		this.list = page.getContent();
 		this.paginationDTO = paginationDTO.builder()
 				             .empty(page.isEmpty())

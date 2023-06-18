@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-06-14T20:55:39+0700",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 1.4.300.v20221108-0856, environment: Java 19.0.1 (Eclipse Adoptium)"
+    date = "2023-06-18T19:43:27+0700",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 19.0.1 (Oracle Corporation)"
 )
 @Component
 public class ModelMapperImpl implements ModelMapper {
@@ -27,7 +27,9 @@ public class ModelMapperImpl implements ModelMapper {
 
         Model model = new Model();
 
-        model.setBrand( brandService.getById( dto.getBrandId() ) );
+        if ( dto.getBrandId() != null ) {
+            model.setBrand( brandService.getById( dto.getBrandId().longValue() ) );
+        }
         model.setName( dto.getName() );
 
         return model;
@@ -41,13 +43,16 @@ public class ModelMapperImpl implements ModelMapper {
 
         ModelDTO modelDTO = new ModelDTO();
 
-        modelDTO.setBrandId( modelBrandId( model ) );
+        Long id = modelBrandId( model );
+        if ( id != null ) {
+            modelDTO.setBrandId( id.intValue() );
+        }
         modelDTO.setName( model.getName() );
 
         return modelDTO;
     }
 
-    private Integer modelBrandId(Model model) {
+    private Long modelBrandId(Model model) {
         if ( model == null ) {
             return null;
         }
@@ -55,7 +60,7 @@ public class ModelMapperImpl implements ModelMapper {
         if ( brand == null ) {
             return null;
         }
-        Integer id = brand.getId();
+        Long id = brand.getId();
         if ( id == null ) {
             return null;
         }

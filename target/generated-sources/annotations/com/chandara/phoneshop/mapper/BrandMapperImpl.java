@@ -6,8 +6,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-06-14T20:55:39+0700",
-    comments = "version: 1.5.5.Final, compiler: Eclipse JDT (IDE) 1.4.300.v20221108-0856, environment: Java 19.0.1 (Eclipse Adoptium)"
+    date = "2023-06-18T19:43:27+0700",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 19.0.1 (Oracle Corporation)"
 )
 public class BrandMapperImpl implements BrandMapper {
 
@@ -19,7 +19,9 @@ public class BrandMapperImpl implements BrandMapper {
 
         Brand brand = new Brand();
 
-        brand.setId( dto.getId() );
+        if ( dto.getId() != null ) {
+            brand.setId( dto.getId().longValue() );
+        }
         brand.setName( dto.getName() );
 
         return brand;
@@ -33,7 +35,9 @@ public class BrandMapperImpl implements BrandMapper {
 
         BrandDTO brandDTO = new BrandDTO();
 
-        brandDTO.setId( brand.getId() );
+        if ( brand.getId() != null ) {
+            brandDTO.setId( brand.getId().intValue() );
+        }
         brandDTO.setName( brand.getName() );
 
         return brandDTO;
