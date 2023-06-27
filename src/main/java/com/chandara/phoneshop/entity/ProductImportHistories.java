@@ -1,7 +1,7 @@
 package com.chandara.phoneshop.entity;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -23,7 +23,7 @@ public class ProductImportHistories{
 	@Column(name = "import_id")
 	private Long id;
 	@Column(name="date_import")
-	private LocalDateTime DateImport;
+	private LocalDate dateImport;
 	@Column(name="import_unit")
 	private Long import_unit;
 	@Column(name="price_per_unit")

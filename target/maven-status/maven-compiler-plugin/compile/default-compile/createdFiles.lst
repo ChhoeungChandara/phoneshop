@@ -32,9 +32,11 @@ com\chandara\phoneshop\DTO\BrandDTO.class
 com\chandara\phoneshop\entity\Brand.class
 com\chandara\phoneshop\entity\ProductImportHistories.class
 com\chandara\phoneshop\PhoneshopApplication.class
+com\chandara\phoneshop\repository\ProductImportHistoryRepository.class
 com\chandara\phoneshop\DTO\ModelDTO.class
 com\chandara\phoneshop\mapper\ModelMapperImpl.class
 com\chandara\phoneshop\exception\GlobalExceptionHandler.class
+com\chandara\phoneshop\DTO\ProductImportDTO.class
 com\chandara\phoneshop\mapper\BrandMapper.class
 com\chandara\phoneshop\entity\Product.class
 com\chandara\phoneshop\mapper\BrandMapperImpl.class
