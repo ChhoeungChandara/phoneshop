@@ -25,7 +25,9 @@ C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\repository\ColorRepository.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\DTO\ProductDTO.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\entity\SaleDetail.java
+C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\DTO\ProductImportDTO.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\entity\Color.java
+C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\repository\ProductImportHistoryRepository.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\DTO\PageDTO.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\entity\Sale.java
 C:\Users\User\Downloads\phoneshop\phoneshop\src\main\java\com\chandara\phoneshop\exception\GlobalExceptionHandler.java
