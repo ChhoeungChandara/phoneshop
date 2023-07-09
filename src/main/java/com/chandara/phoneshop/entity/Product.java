@@ -1,6 +1,6 @@
 package com.chandara.phoneshop.entity;
-
 import java.math.BigDecimal;
+import javax.validation.constraints.DecimalMin;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,6 @@ import lombok.Data;
 @Table(name="products",
        uniqueConstraints = {@UniqueConstraint(columnNames={"model_id","color_id"})})
 public class Product{
-	
 	@Id
 	@GeneratedValue(strategy =  GenerationType.IDENTITY)
 	@Column(name = "id")
@@ -40,6 +39,7 @@ public class Product{
 	@JoinColumn(name="color_id")
 	private Color color;
 	
+	@DecimalMin(value = "0.00001",message = "price must be grater than 0")
 	@Column(name = "sale_price")
 	private BigDecimal SalePrice;
 
