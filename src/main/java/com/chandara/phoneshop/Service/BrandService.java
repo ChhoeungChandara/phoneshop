@@ -1,6 +1,7 @@
 package com.chandara.phoneshop.Service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.data.domain.Page;
 
@@ -14,5 +15,6 @@ public interface BrandService {
 	Page<Brand> pagenation(int page,int size);
 	Brand Update(Brand brand,Long id);
 	void Delete(Long id);
+	Page<Brand> getBrands(Map<String, String> params);
 
 }
